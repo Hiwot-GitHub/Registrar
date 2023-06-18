@@ -1,0 +1,23 @@
+{% extends './base.html' %}
+{%block head %}
+{% endblock %}
+{% block content %}
+<a href="{% url 'home' %}">Home</a>
+<h1>list of Courses</h1>
+<a href="{% url 'createcourse' %}"><button>Add course</button></a>
+<div class="flex-container">
+   {% for course in course_list %}
+   <div class="box">
+    {{ course.title }}
+    <hr />
+    {{ course.description }}
+    <div class="level">
+    <hr />
+    {{ course.level}}</div>
+
+   </div>
+   <a href="{% url 'updatecourse' course.id %}"><button>Update</button></a>
+   <a href="{% url 'deletecourse' course.id %}"><button>Delete</button></a>
+</div>
+{% endfor %}
+{% endblock %}

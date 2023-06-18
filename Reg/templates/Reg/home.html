@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<a href="{% url 'listcourse' %}"><button class="home-btn">Courses</button></a><br/>
+<a href="{% url 'liststudent' %}"><button class="home-btn">Students</button></a><br/>
+<p>Are you a student or a registrar officer?</p>
+<a href="{% url 'login' %}">
+    <button class='login'>Login</button>
+</a>
+<p>You don't have account?</p>
+<a href="{% url 'signup' %}">
+    Signup
+</a>
+{% endblock %}
